@@ -17,7 +17,7 @@ const LandingPage = ({ setShowNextPage, setSummaryId }) => {
             {
                 urlData &&
                 <div className="flex flex-wrap justify-center bg-[#333] text-white sm:justify-center">
-                    {urlData.map(item => {
+                    {urlData.filter(temp => temp.show.image?.original != undefined).map(item => {
                         return (
                             <div key={item.show.id} className="sm:w-[80vw] md:max-w-sm flex flex-col justify-between bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 md:m-5 sm:my-3">
                                 <img className="rounded-t-lg sm:object-contain" src={item.show.image?.original} alt="poster" />
